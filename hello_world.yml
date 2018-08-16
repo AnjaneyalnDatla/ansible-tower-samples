@@ -9,7 +9,7 @@
   - name: Pull Customer Portal Docker Image
     docker_image:
      name: mdv-docdevl01:18444/customer-portal-ui
-     tag: latest
+     tag: 100
      state: present
   - name: Start Customer Portal Docker Container
     docker_container:
