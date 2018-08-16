@@ -1,8 +1,23 @@
-- hosts: all
+- hosts: mdv-doctest
   remote_user: adatla
   tasks:
-    - name: test connection
-      ping:
-      remote_user: adatla
+  - name: Docker Login
+    docker_login:
+     username: "admin"
+     password: "admin123"
+     registry: "mdv-docdevl01:18444"
+  - name: Pull Customer Portal Docker Image
+    docker_image:
+     name: mdv-docdevl01:18444/customer-portal-ui
+     tag: latest
+     state: present
+  - name: Start Customer Portal Docker Container
+    docker_container:
+     name: customer-portal-ui
+     image: mdv-docdevl01:18444/customer-portal-ui
+     state: started
+     ports:
+      - "80:80"
+
 
 
