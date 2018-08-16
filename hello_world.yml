@@ -17,7 +17,7 @@
      image: "{{container_image}}"
      state: started
      ports:
-      - "{{exposed_port}}":"{{internal_port}}"
+      - "80":"80"
 
 
 
