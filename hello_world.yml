@@ -15,7 +15,7 @@
     docker_container:
      name: customer-portal-ui
      image: mdv-docdevl01:18444/customer-portal-ui/master
-     tag:100
+     tag: 100
      state: started
      ports:
       - "80:80"
