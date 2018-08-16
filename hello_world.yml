@@ -5,7 +5,7 @@
     docker_login:
      username: "admin"
      password: "admin123"
-     registry: "mdv-docdevl01:18444"
+     registry: "mdv-docdevl01:18443"
   - name: Pull Customer Portal Docker Image
     docker_image:
      name: mdv-docdevl01:18444/customer-portal-ui
