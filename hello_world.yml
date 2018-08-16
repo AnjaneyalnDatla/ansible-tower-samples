@@ -1,5 +1,5 @@
 - hosts: mdv-doctest
-  remote_user: adatla
+  remote_user: glam
   tasks:
   - name: Docker Login
     docker_login:
