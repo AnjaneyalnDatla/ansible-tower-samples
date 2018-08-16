@@ -8,13 +8,13 @@
      registry: "mdv-docdevl01:18444"
   - name: Pull Customer Portal Docker Image
     docker_image:
-     name: mdv-docdevl01:18444/customer-portal-ui
+     name: mdv-docdevl01:18444/customer-portal-ui/master
      tag: 100
      state: present
   - name: Start Customer Portal Docker Container
     docker_container:
      name: customer-portal-ui
-     image: mdv-docdevl01:18444/customer-portal-ui
+     image: mdv-docdevl01:18444/customer-portal-ui/master
      state: started
      ports:
       - "80:80"
