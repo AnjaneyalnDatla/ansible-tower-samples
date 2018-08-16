@@ -1,23 +1,23 @@
-- hosts: mdv-doctest
-  remote_user: glam
+- hosts: {{comma_separated_hosts}}
+  remote_user: {{user}}
   tasks:
   - name: Docker Login
     docker_login:
-     username: "admin"
-     password: "admin123"
-     registry: "mdv-docdevl01:18444"
+     username: {{docker_registry_username}}
+     password: "{{docker_registry_password}}"
+     registry: "{{docker_registry}}"
   - name: Pull Customer Portal Docker Image
     docker_image:
-     name: mdv-docdevl01:18444/customer-portal-ui/master
-     tag: 100
+     name: {{image_name}}
+     tag: {{tag}}
      state: present
   - name: Start Customer Portal Docker Container
     docker_container:
-     name: customer-portal-ui
-     image: mdv-docdevl01:18444/customer-portal-ui/master:100
+     name: {{container_name}}
+     image: {{container_image}}
      state: started
      ports:
-      - "80:80"
+      - "{{exposed_port}}:{{internal_port}}"
 
 
 
